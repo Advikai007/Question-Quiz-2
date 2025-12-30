@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advik Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="timer" id="timerBox" style="display:none;">
+        <span id="timer">30</span>s left
+    </div>
+
+    <div class="card" id="startScreen">
+        <h1 class="title" style="font-size: 30px;">Let’s Get You In</h1>
+        <p class="subtitle" style="font-weight: 500;">Fill this real quick & then let’s test that brain.</p>
+        <form class="start-form" id="startForm">
+            <input type="text" id="name" placeholder="Your name " required>
+            <input type="text" id="branch" placeholder="Your branch " required>
+            <input type="text" id="regno" placeholder="Your Reg. Number " required>
+            <button class="btn" type="submit"> Let's Start Quiz </button>
+        </form>
+    </div>
+
+    <div class="card" id="quizScreen" style="display:none;">
+        <div class="student-info" id="studentInfo"></div>
+        <p>Question <span id="qNum">1</span></p>
+        <div class="question" id="question"></div>
+        <form class="options" id="options"></form>
+
+        <div class="nav-buttons">
+            <button class="btn" type="button" onclick="prevQ()">Previous</button>
+            <button class="btn" id="submitBtn" type="button" onclick="submitQuiz()" style="display: none;">
+                SUBMIT
+            </button>
+            <button class="btn" id="nextBtn" type="button" onclick="nextQ()">Next</button>
+        </div>
+    </div>
+    <div class="card" id="scoreScreen" style="display:none; text-align: center;">
+        <h1 class="title">Quiz Complete! </h1>
+        <div class="student-info" id="finalStudentInfo"></div>
+        <div class="score-display">
+            <span id="finalScore">0</span>/<span id="totalQuestions">0</span>
+        </div>
+        <p id="feedbackText" style="font-size: 1.2rem; margin-bottom: 30px;"></p>
+        <button class="btn" onclick="location.reload()">Restart Quiz 🔄</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
